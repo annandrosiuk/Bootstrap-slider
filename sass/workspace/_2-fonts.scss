@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("../fonts/Montserrat-Medium/Montserrat-Medium.eot") format('opentype');
+  /* IE9 Compat Modes */
+  src: url("../fonts/Montserrat-Medium/Montserrat-Medium.woff2") format("woff2"), 
+       url("../fonts/Montserrat-Medium/Montserrat-Medium.woff") format("woff"), 
+       url("../fonts/Montserrat-Medium/Montserrat-Medium.svg") format("svg");
+  /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ChasingEmbers";
+  src: url("../fonts/Chasing-Embers/ChasingEmbers.otf") format('opentype');
+  /* IE9 Compat Modes */
+  src: url("../fonts/Chasing-Embers/ChasingEmbers.ttf") format("truetype");
+  /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "VarelaRoud";
+  src: url("../fonts/Varela-Roud/VarelaRoud.ttf") format('truetype');
+  /* IE9 Compat Modes */
+  src: url("../fonts/Varela-Roud/VarelaRoud.woff2") format("woff2"), 
+       url("../fonts/Varela-Roud/VarelaRoud.woff") format("woff"), 
+       url("../fonts/Varela-Roud/VarelaRoud.svg") format("svg");
+  // /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}

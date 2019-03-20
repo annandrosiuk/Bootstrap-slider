@@ -1,0 +1,313 @@
+.preloader{
+    position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background:#ECF0F1;
+}
+.load{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    /*change these sizes to fit into your project*/
+    width:100px;
+    height:100px;
+  }
+.load hr{
+    border:0;
+    margin:0;
+    width:40%;
+    height:40%;
+    position:absolute;
+    border-radius:50%;
+    animation:spin 2s ease infinite
+}
+.load :first-child{
+    background:#19A68C;
+    animation-delay:-1.5s
+}
+.load :nth-child(2){
+    background:#F63D3A;
+    animation-delay:-1s
+}
+.load :nth-child(3){
+    background:#FDA543;
+    animation-delay:-0.5s
+}
+.load :last-child{
+    background:#193B48
+}
+  
+@keyframes spin{
+    0%,100%{transform:translate(0)}
+    25%{transform:translate(160%)}
+    50%{transform:translate(160%, 160%)}
+    75%{transform:translate(0, 160%)}
+}
+
+body {
+	background-color: $ivor;
+	color: $grey;
+    //font-family: "VarelaRound";
+    font-size: $font-size;
+    @include indents(0 ,0);
+    text-align: center;
+}
+
+
+/*--------------Header starts here-------------*/
+header {
+    background-color: $ivor;
+    position: fixed;
+    color: $white;
+    @include basic(76px ,100%);
+    opacity: 0.8;
+    z-index: 100;
+}
+header hr {
+    @include basic(10px, 100%);
+    background-color: $dark-grey;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+}
+#header-inner {
+	max-width: 1350px;
+    margin: 0 auto;
+    width: 90%;
+}
+#logo {
+    @include position(relative, 8px, 30px);
+    @include basic(50px ,50px);
+    border: 5px solid $grey;
+    float: left;
+    transform: rotate(0deg);
+    transition: transform .4s ease-in-out;
+    
+    &:hover {
+        opacity: 1;
+        transform: rotate(-90deg);
+        transition: transform .4s ease-in-out;
+    }
+    &:hover #logo-text{
+        transform: translate(-50%, -50%) rotate(90deg);
+        transform-origin: center;
+        color: $grey;
+    }
+}
+#logo-text {
+    @include position(absolute, 50%, 50%);
+	font-size: 13px;
+	transform: translate(-50%, -50%) rotate(0deg);
+    transition: transform .4s ease-in-out;
+    color: $grey;
+}
+nav {
+    float: right;
+}
+ul{
+    list-style: none;
+}
+nav ul li {
+    font-size: 1.1em;
+    display: inline-block;
+    padding: 30px 20px 0 20px;
+}
+nav ul li a:hover {
+    color: $pink;
+    text-decoration: none;
+}
+#current {
+	color: $pink;
+	border-bottom: 2px solid $pink;
+}
+.nav-menu {
+  display: inline-block;
+  vertical-align: middle;
+}
+.mobile-nav {
+	display: none;
+    float: right;
+}
+.dropdown-menu {
+	display: none;
+    text-align: left;
+    @include position(absolute, 75px, none);
+    opacity: 0.8;
+    border-bottom: 1px solid $grey;
+    z-index: 100;
+    width: 100%;
+}
+.dropdown-menu li {
+	list-style: none;
+	font-size: 1.5em;
+    margin: 0 0 0.5em 1em;
+}
+.navigation-target {
+    display: none;
+    margin-right: 5%;
+  }
+.mobile-menu-toggle {
+	float: right;
+}
+.navigation-toggle {
+    @include basic(40px, 30px);
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+    margin-top: 0.85em;
+}
+.navigation-toggle-label {
+	font-family: 'franklin-gothic-urw-cond', Arial, sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	color: $grey;
+	text-align: center;
+    display: block;
+    @include position1(relative, 12px , -60px);
+	text-transform: uppercase;
+}
+.navigation-toggle-icon {
+	border-bottom: 4px solid $grey;
+	padding-top: 12px;
+	display: block;
+}
+.navigation-toggle-icon:before,
+.navigation-toggle-icon:after {
+	border-top: 4px solid $grey;
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+.navigation-toggle-icon:before {
+	top: 2px;
+}
+.navigation-toggle-icon:after {
+	bottom: 14px;
+}
+
+/*------------------- Burger animation -------------------*/
+
+.navigation-toggle-icon,
+.navigation-toggle-icon:before,
+.navigation-toggle-icon:after {
+	transition-property: transform, border-color;
+	transition-duration: 0.25s;
+	transition-timing-function: cubic-bezier(0.5, -0.5, 0.5, 1.5);
+}
+.navigation-toggle-icon {
+	transition-delay: 0.125s;
+}
+.navigation-toggle-icon:before,
+.navigation-toggle-icon:after {
+	transition-delay: 0s;
+	transform-origin: center;
+}
+.navigation-target.clicked + .navigation-toggle .navigation-toggle-icon {
+	transition-delay: 0s;
+}
+.navigation-target.clicked + .navigation-toggle .navigation-toggle-icon:before,
+.navigation-target.clicked + .navigation-toggle .navigation-toggle-icon:after {
+	transition-delay: 0.125s;
+}
+.navigation-target.clicked + .navigation-toggle .navigation-toggle-icon:before {
+	transform: translateY(10px) rotate(135deg);
+}
+.navigation-target.clicked + .navigation-toggle .navigation-toggle-icon {
+	border-color: transparent;
+}
+.navigation-target.clicked + .navigation-toggle .navigation-toggle-icon:after {
+	transform: translateY(-10px) rotate(-135deg);
+}
+/* -------------------- END OF HEADER -------------------- */
+.clear {
+    @include basic(75px, 100%);
+    background-color: $white;
+    opacity: 0;
+    z-index: 1;
+}
+.clear-plus{
+    @include basic(360px, 100%);
+}
+/* -------------------- END OF CLEAR -------------------- */
+#separator {
+    @include basic(190px, 100%);
+    padding-top: 15px;
+}
+#separator h2 {
+    padding-top: -10px;
+}
+/* -------------------- END OF SEPARATOR -------------------- */
+.p-0 {
+    padding: 0;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    @include basic(50px, 50px);
+}
+
+.carousel-inner-div {
+    @include basic(40%, 40%);
+    background-color: $ivor;
+    @include position(absolute, 30%, 30%);
+    z-index: 20;
+
+    h2{
+        text-transform: uppercase;
+        font-size: 130%;
+        text-align: center;
+        font-weight: bolder;
+        margin-top: 7%;
+    }
+
+    p {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 110%;
+        max-width: 90%;
+        margin: 2% auto;
+    }
+    .carousel-button {
+        width: 14%;
+        height: 14%;
+        margin: 4% auto;
+        background-color: $grey;
+        color: $ivor;
+        text-align: center;
+        transition: all ease-in 140ms;
+
+        &:hover {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+    }
+    
+}
+/* -------------------- END OF SLIDER -------------------- */
+
+#skills {
+    @include basic(400px, 100%);
+}
+
+/* -------------------- MEDIA -------------------- */
+@media screen and (max-width: 768px) {
+	header {
+		position: absolute;
+	}
+	#logo {
+		margin: 0px -30px;
+	}
+	.nav-menu {
+		display: none;
+    }
+	.mobile-nav {
+		display: inline-block;
+      }
+    #banner{
+        max-height: 35%;
+    }
+    .carousel-button {
+        display: none;
+    }
+}

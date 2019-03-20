@@ -1,0 +1,40 @@
+.h1 {
+    font-family: $ce;
+    font-size: $f110;
+    letter-spacing: 2px;
+    color: $grey;
+}
+.h2 {
+    text-transform: uppercase;
+    font-size: $f14;
+    color: $grey;
+    font-family: $vr;
+}
+
+.p{
+    font-family: $vr;
+}
+
+.a{
+    font-family: $vr;
+    font-size: $f18;
+    color: $grey;
+    text-decoration: none;
+    transition: all ease-in 340ms;
+    
+    &:hover, &:active, &:focus {
+                color: $pink;
+                text-decoration: none;
+                transition: ease-in-out .3s;
+            }
+}
+
+.bold {
+    font-weight: bold;
+    color: $black;
+}
+  
+.italic {
+    font-style: italic;
+    letter-spacing: -0.1rem;
+}
